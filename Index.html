@@ -1,0 +1,97 @@
+<html>
+
+<head>
+
+<title>To Do App</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+
+<link href="https://bootswatch.com/4/superhero/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+<link rel="icon" href="Logo.png" type="image/png" sizes="16x16">
+
+
+<link href="Custom.css" rel="stylesheet" type="text/css"></link>
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="jumbotron">
+    <center>
+    <img height="100px" width="100px" src="Logo.png"></img>
+    </br>
+    </br>
+    <h1 id="Title">To-Do App</h1>
+  </center>
+</div>
+</div>
+
+
+<div ng-app="EventApp" ng-controller="Eventcontrol" style="float: none;margin: 0 auto;color:black;" class="col-xs-8 col-md-6">
+  <center>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+    <input type="text" style="font-size:16px;color:black;" ng-model="Search" value="Search Item"></input>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+<div class="panel panel-default">
+<div class="panel-heading"></br></br><button style="font-size:16px" type="button" class="btn btn-secondary">Add Item</button></br></br>
+
+</br>
+</br>
+
+</div>
+
+<div class="panel-group">
+    <div style="font-size:18px" class="panel-body">
+
+      <table>
+
+      <tr>
+
+        <td style="padding-bottom:10px;color:black"><b>Order</b></td>
+        <td id="listhead"><b>Action</b></td>
+        <td id="listhead"><b>Priority</b></td>
+        <td></td>
+
+      </tr>
+
+        <tr ng-repeat="task in tasks | orderBy: 'action' | filter:Search">
+
+          <td id="listrow-f">{{task.order}}</td>
+          <td id="listrow-m">{{task.action}}</td>
+          <td id="listrow-m">{{task.Priority}}</td>
+          <td id="listrow-c">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <span ng-click="RemoveTask(task)" style="color:red;cursor:pointer">X</span></td>
+
+        </tr>
+
+      </table>
+
+    </div>
+  </div>
+  </div>
+</div>
+  </center>
+
+<script src="Controller.js"></script>
+
+</body>
+
+</html>
