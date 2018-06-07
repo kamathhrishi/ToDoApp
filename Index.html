@@ -17,6 +17,8 @@
 
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+
+
 <link rel="icon" href="Logo.png" type="image/png" sizes="16x16">
 
 
@@ -45,14 +47,30 @@
   </br>
   </br>
   </br>
-    <input type="text" style="font-size:16px;color:black;" ng-model="Search" value="Search Item"></input>
+    <h1 style="color:white">Search</h1> <input type="text" style="font-size:16px;color:black;" ng-model="Search" value="Search Item"></input>
   </br>
   </br>
   </br>
   </br>
   </br>
 <div class="panel panel-default">
-<div class="panel-heading"></br></br><button style="font-size:16px" type="button" class="btn btn-secondary">Add Item</button></br></br>
+
+<form>
+
+
+</form>
+
+<div class="panel-heading">
+
+  <form ng-submit="AddItem()">
+
+  <b>Name: &nbsp&nbsp</b><input placeholder="Item_Name" ng-model="newitem.name" type="text" style="font-size:16px;color:black;" value="Search Item"></input>
+</br>
+  <b>Priority:&nbsp</b><input placeholder="Item_Prior" ng-model="newitem.prior" type="text" style="font-size:16px;color:black;"  value="Search Item"></input>
+
+</br></br><input type="submit" value="Add Item" style="font-size:16px" type="button" ng-model="" class="btn btn-secondary"></button></br></br>
+
+</form>
 
 </br>
 </br>
@@ -66,14 +84,14 @@
 
       <tr>
 
-        <td style="padding-bottom:10px;color:black"><b>Order</b></td>
-        <td id="listhead"><b>Action</b></td>
-        <td id="listhead"><b>Priority</b></td>
+        <td style="padding-bottom:10px;color:black"><span ng-click="category='order'" style="color:green;cursor:pointer" class="glyphicon glyphicon-arrow-up"></span><b> Order </b><span ng-click="category='-order'" style="color:red;cursor:pointer" class="glyphicon glyphicon-arrow-down"></span></td>
+        <td id="listhead"><span ng-click="category='action'" style="color:green;cursor:pointer" class="glyphicon glyphicon-arrow-up"></span><b> Action </b><span ng-click="category='-action'" style="color:red;cursor:pointer" class="glyphicon glyphicon-arrow-down"></span></td>
+        <td id="listhead"><span ng-click="category='Priority'" style="color:green;cursor:pointer" class="glyphicon glyphicon-arrow-up"></span><b> Priority </b><span ng-click="category='-Priority'" style="color:red;cursor:pointer"  class="glyphicon glyphicon-arrow-down"></span></td>
         <td></td>
 
       </tr>
 
-        <tr ng-repeat="task in tasks | orderBy: 'action' | filter:Search">
+        <tr id="TaskTab" ng-repeat="task in tasks | orderBy: category | filter:Search">
 
           <td id="listrow-f">{{task.order}}</td>
           <td id="listrow-m">{{task.action}}</td>
@@ -89,6 +107,9 @@
   </div>
 </div>
   </center>
+
+
+</div>
 
 <script src="Controller.js"></script>
 

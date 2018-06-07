@@ -4,6 +4,8 @@ var myApp=angular.module('EventApp',[]);
 myApp.controller('Eventcontrol',function($scope)
 {
 
+     $scope.category="def";
+
      $scope.tasks=[
 
         {order:1,action:'A',Priority:6},
@@ -19,6 +21,20 @@ myApp.controller('Eventcontrol',function($scope)
 
           var taskindex=$scope.tasks.indexOf(task);
           $scope.tasks.splice(taskindex,1);
+
+     }
+
+     $scope.AddItem=function()
+     {
+
+          $scope.tasks.push(
+           {
+             order: $scope.tasks.length+1,
+             action: $scope.newitem.name,
+             Priority: $scope.newitem.prior
+           }
+
+          )
 
      }
 
