@@ -13,14 +13,16 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <title>Bookmarker Application</title>
-
+  <link rel="stylesheet" type="text/css" href="Style.css"></link>
 </head>
 
-<body>
+<body onload="FetchBookmarks()">
 
   <center>
   <div class="jumbotron" style="width:800px;">
-    <h1>Bookmarker Application</h1>
+    <h1>Bookmark Application</h1>
+  </br>
+  </br>
   </br>
 
   <form id="Web_Form">
@@ -34,10 +36,16 @@
   </div>
   <div class="form-group form-check">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Add</button>
 </form>
 
 </div>
+
+<div id="Saved_Bookmarks">
+
+
+</div>
+
 </center>
 
 <script
@@ -47,4 +55,5 @@
   <script src="Script.js"></script>
 
 </body>
+
 </html>
