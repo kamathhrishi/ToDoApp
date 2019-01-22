@@ -1,0 +1,40 @@
+-Initialize current folder as a git repository
+
+git init
+
+-git status
+
+Current status of git repository
+
+-git add .
+
+All files in current folder would be added to staging tran_remark
+
+-git add <file(s)/folder(s)>
+
+Add files(s)/folders(s) to staging tran_remark
+
+-git commit -m
+
+m is for message
+
+Commit changes to current repository
+
+-git log -oneline
+
+see a brief log of all commands
+
+-git status
+
+Shows status of files in staging
+
+-git checkout <commit><file>
+
+Checkout a file from a older commit
+use number associated with the commit
+
+-git reset HEAD <file>
+
+Goes back to the latest commit of the file
+
+-git checkout -- <file>
